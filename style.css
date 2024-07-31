@@ -13,6 +13,12 @@ shadow box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
   margin: 0;
   padding: 0;
 }
+p {
+  font-size: 1.187rem;
+}
+span {
+  display: block;
+}
 img {
   width: 100%;
   display: block;
@@ -93,12 +99,65 @@ header ol li a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  padding: 0px 30px;
+}
+.max-grid {
+  grid-column: 1/3;
+}
+.titulo h1 {
+  color: #9665df;
+  font-size: 4rem;
+  line-height: 1;
+}
+.titulo span {
+  color: #9665df;
+  font-size: 0.875rem;
+}
+.caracteristica {
+  display: flex;
+  gap: 30px;
+}
+.caracteristica div {
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(130, 79, 206, 1) 0%,
+    rgba(173, 121, 250, 1) 100%
+  );
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  text-align: center;
+  align-self: flex-start;
+}
+.caracteristica-superior {
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 3rem;
+  padding: 10px;
+}
+.caracteristica-inferior {
+  background-color: #fff;
+  color: #9665df;
+  font-size: 1.125rem;
 }
 /*ANUNCIO*/
 .anuncio {
   grid-area: anuncio;
+  padding: 30px;
+}
+.anuncio > div {
+  margin-bottom: 30px;
 }
 /*FOOTER*/
 footer {
   grid-area: footer;
+  padding: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(130, 79, 206, 1) 0%,
+    rgba(173, 121, 250, 1) 100%
+  );
+  text-align: center;
+  color: #fff;
+  font-size: 1.125rem;
 }
