@@ -15,6 +15,8 @@ shadow box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
 }
 p {
   font-size: 1.187rem;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
 }
 span {
   display: block;
@@ -55,6 +57,7 @@ header {
   justify-content: space-between;
   padding: 30px;
   align-items: center;
+  flex-wrap: wrap;
 }
 header img {
   max-width: 200px;
@@ -129,7 +132,7 @@ header ol li a:hover {
   align-self: flex-start;
 }
 .caracteristica-superior {
-  color: #fff;
+  color: #b07dfb;
   width: 60px;
   height: 60px;
   font-size: 3rem;
@@ -139,6 +142,52 @@ header ol li a:hover {
   background-color: #fff;
   color: #9665df;
   font-size: 1.125rem;
+}
+.wolf-1 {
+  grid-row: 3/5;
+  align-self: flex-end;
+}
+.wolf-2 {
+  align-self: flex-end;
+}
+.paragrafo-detalhe {
+  color: #9665df;
+  max-width: 230px;
+  font-size: 0.875rem;
+}
+blockquote {
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(130, 79, 206, 1) 0%,
+    rgba(173, 121, 250, 1) 100%
+  );
+  padding: 50px 100px;
+  border-radius: 5px;
+  color: #fff;
+}
+blockquote p {
+  font-size: 1.5rem;
+}
+.atributos {
+  background: linear-gradient(
+    90deg,
+    rgba(130, 79, 206, 1) 0%,
+    rgba(173, 121, 250, 1) 100%
+  );
+  color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  font-size: 1.125rem;
+}
+.atributos li {
+  padding: 15px;
+}
+.atributos li + li {
+  border-top: 2px solid #af7bfb;
+}
+.informacoes p + p {
+  margin-top: 20px;
 }
 /*ANUNCIO*/
 .anuncio {
@@ -160,4 +209,41 @@ footer {
   text-align: center;
   color: #fff;
   font-size: 1.125rem;
+}
+/*RESPONSIVIDADE*/
+@media (max-width: 1200px) {
+  .grid-leyout {
+    grid-template-areas:
+      "header header header"
+      "nav-animal conteudo conteudo"
+      "nav-animal anuncio anuncio"
+      "footer footer footer";
+  }
+  .anuncio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 760px) {
+  .grid-leyout {
+    grid-template-areas:
+      "header header header"
+      "nav-animal nav-animal nav-animal"
+      "conteudo conteudo conteudo"
+      "anuncio anuncio anuncio"
+      "footer footer footer";
+  }
+  .nav-animal ol {
+    display: flex;
+    overflow-x: scroll;
+  }
+}
+@media (max-width: 600px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+  .conteudo * {
+    grid-column: 1/2;
+  }
 }
