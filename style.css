@@ -35,6 +35,7 @@ li {
 body {
   font-family: "Vollkorn", serif;
   color: rgba(0, 0, 0, 0.7);
+  max-width: 100vw;
 }
 .grid-leyout {
   display: grid;
@@ -192,10 +193,13 @@ blockquote p {
 /*ANUNCIO*/
 .anuncio {
   grid-area: anuncio;
+  background-color: fafbfc;
+  display: grid;
+  align-content: start;
   padding: 30px;
-}
-.anuncio > div {
-  margin-bottom: 30px;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border: solid red 1px;
 }
 /*FOOTER*/
 footer {
@@ -219,11 +223,6 @@ footer {
       "nav-animal anuncio anuncio"
       "footer footer footer";
   }
-  .anuncio {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
 }
 @media (max-width: 760px) {
   .grid-leyout {
@@ -242,6 +241,9 @@ footer {
 @media (max-width: 600px) {
   .conteudo {
     grid-template-columns: 1fr;
+  }
+  .anuncio {
+    padding: 0 30px 30px 30px;
   }
   .conteudo * {
     grid-column: 1/2;
